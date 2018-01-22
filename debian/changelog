@@ -1,4 +1,4 @@
-network-manager-openconnect (1.2.4-1+lopin2) UNRELEASED; urgency=medium
+network-manager-openconnect (1.2.4-1+lopin3) UNRELEASED; urgency=medium
 
   * used forked source code supporting GlobalProtect
 
