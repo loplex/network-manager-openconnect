@@ -1,8 +1,8 @@
-network-manager-openconnect (1.2.4-1ubuntu1) UNRELEASED; urgency=medium
+network-manager-openconnect (1.2.4-1+lopin2) UNRELEASED; urgency=medium
 
   * used forked source code supporting GlobalProtect
 
- -- Martin Lopatar <lopin@dataplex.cz>  Mon, 22 Jan 2018 02:20:18 +0100
+ -- Martin Lopatář <lopin@dataplex.cz>  Mon, 22 Jan 2018 02:20:18 +0100
 
 network-manager-openconnect (1.2.4-1) unstable; urgency=medium
 

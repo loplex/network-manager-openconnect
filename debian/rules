@@ -25,6 +25,7 @@ override_dh_makeshlibs:
 	dh_makeshlibs -X/usr/lib/$(DEB_HOST_MULTIARCH)/NetworkManager/
 
 override_dh_autoreconf:
+	./autogen.sh
 	for f in $(AUTORECONF_SOURCES); do \
 		[ -f $$f.debian-backup ] || mv $$f $$f.debian-backup; \
 	done
