@@ -1,0 +1,20 @@
+network-manager-openconnect (0.9.8.4-1) unstable; urgency=low
+
+    The network-manager-openconnect-gnome package is no longer installed
+    automatically by network-manager-openconnect.  As announced earlier, it
+    had been listed as a recommended dependency for one release cycle to
+    ensure smooth upgrades.  GNOME users should now explicitly install the
+    network-manager-openconnect-gnome package for GNOME desktop integration.
+
+ -- Mike Miller <mtmiller@ieee.org>  Wed, 30 Oct 2013 18:43:46 -0400
+
+network-manager-openconnect (0.9.4.0-3) unstable; urgency=low
+
+    This package has been split into network-manager-openconnect and
+    network-manager-openconnect-gnome to separate the core functionality from
+    the GNOME GUI components.  For now, network-manager-openconnect-gnome is a
+    recommendation so that current users will not lose capability.  GNOME
+    desktop users should explicitly install network-manager-openconnect-gnome
+    from now on as this recommendation will be dropped in a future version.
+
+ -- Mike Miller <mtmiller@ieee.org>  Wed, 04 Apr 2012 18:49:08 -0400

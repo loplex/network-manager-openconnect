@@ -1,0 +1,266 @@
+network-manager-openconnect (1.2.4-1) unstable; urgency=medium
+
+  * New upstream version 1.2.4
+    - Support Juniper Network Connect / Junos Pulse Secure VPN (Closes: 789112)
+  * Bump network-manager-dev and libnm-*-dev dependency to (>= 1.2.0)
+  * Bump debhelper compat level to 10. Building with dh_autoreconf is the
+    default.
+  * d/control: Drop obsolete build-depends on libdbus-glib-1-dev and
+    libgconf2-dev
+  * d/control: Drop unnecessary build-depends on dh-autoreconf and dpkg-dev
+  * d/control: Drop obsolete versioned dependencies from pre-wheezy
+  * d/control: Drop obsolete Breaks/Replaces from pre-wheezy
+  * d/control: Sort fields according to "cme fix dpkg-control"
+  * d/control: Use canonical repository URL for Vcs-Git
+  * d/copyright: Update Format using "cme fix dpkg-copyright"
+  * Bump Standards-Version to 3.9.8, no changes needed
+
+ -- Mike Miller <mtmiller@debian.org>  Thu, 08 Dec 2016 21:05:50 -0800
+
+network-manager-openconnect (1.2.2-1) unstable; urgency=medium
+
+  [ Aron Xu ]
+  * New upstream release.
+
+  [ Mike Miller ]
+  * Add dependency on network-manager (>= 1.2) to ensure non-absolute
+    plugin paths are handled.
+  * No longer need to build with configure option --enable-absolute-
+    paths.
+
+ -- Mike Miller <mtmiller@debian.org>  Sat, 28 May 2016 13:51:40 -0700
+
+network-manager-openconnect (1.2.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #817057)
+  * Install nm-openconnect-service.name in its new location.
+  * Build with configure option --enable-absolute-paths.
+  * Bump network-manager-dev and libnm-*-dev dependency to (>= 1.1.0).
+  * Build-depend on libglib2.0-dev (>= 2.32).
+  * Drop unnecessary dependency on network-manager (>= 0.9.4.0-4).
+  * Update Vcs-* fields to use https.
+  * Bump Standards-Version to 3.9.7. No changes needed.
+  * Add "core" to short description for consistency.
+
+ -- Mike Miller <mtmiller@debian.org>  Fri, 22 Apr 2016 18:28:22 -0700
+
+network-manager-openconnect (1.0.2-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes FTBFS when building with libopenconnect >= 5. (Closes: #784921)
+  * Build-depend on network-manager-dev and libnm-*-dev (>= 0.9.10).
+  * Bump Standards-Version to 3.9.6. No changes needed.
+
+ -- Mike Miller <mtmiller@debian.org>  Sun, 10 May 2015 16:47:03 -0400
+
+network-manager-openconnect (0.9.10.0-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes FTBFS due to deprecated gnome-keyring API. (Closes: #759836)
+  * Build-depend on libsecret-1-dev, no longer build-depend on
+    libgnome-keyring-dev.
+  * Bump the build-dependency on libgtk-3-dev to (>= 3.4).
+  * Bump debhelper compatibility level to 9.
+  * No longer explicitly export dpkg-buildflags, debhelper v9 sets them.
+  * Use dh-autoreconf to regenerate the build system, drop autotools-dev.
+    (Closes: #750060)
+
+ -- Mike Miller <mtmiller@debian.org>  Mon, 15 Sep 2014 23:00:25 -0400
+
+network-manager-openconnect (0.9.8.6-1) unstable; urgency=medium
+
+  * New upstream release.
+    - Fixes FTBFS due to deprecated use of GTK stock icons. (Closes: #741796)
+    - Fixes FTBFS when building with libopenconnect >= 3. (Closes: #742087)
+  * Build-depend on autotools_dev for up-to-date config.{guess,sub}.
+  * Use my @debian.org address.
+  * Update debian/copyright.
+  * Bump Standards-Version to 3.9.5. No changes needed.
+  * Run wrap-and-sort on debian/control.
+  * debian/NEWS: Rephrase the last release news item for clarity.
+
+ -- Mike Miller <mtmiller@debian.org>  Sun, 06 Apr 2014 18:53:09 -0400
+
+network-manager-openconnect (0.9.8.4-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build-depend on network-manager-dev and libnm-*-dev (>= 0.9.8).
+  * No longer recommend network-manager-openconnect-gnome. (Closes: #709160)
+  * Remove obsolete DM-Upload-Allowed control field.
+  * Canonicalize Vcs-* control fields.
+  * Bump Standards-Version to 3.9.4. No changes needed.
+
+ -- Mike Miller <mtmiller@ieee.org>  Wed, 30 Oct 2013 18:43:46 -0400
+
+network-manager-openconnect (0.9.8.0-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes FTBFS with latest libc6 and glib2.0. (Closes: #707422)
+  * Remove all patches that were cherry-picked from upstream.
+  * Build-depend on network-manager-dev and libnm-*-dev (>= 0.9.6).
+  * Relax build-depend on libopenconnect-dev to (>= 3.19) to allow
+    building against libopenconnect1.
+
+ -- Mike Miller <mtmiller@ieee.org>  Thu, 09 May 2013 08:26:59 -0400
+
+network-manager-openconnect (0.9.5.95-1) experimental; urgency=low
+
+  * New upstream release.
+  * Remove patches that are part of upstream release.
+  * Build-depend on network-manager-dev and libnm-*-dev (>= 0.9.5.95).
+  * Build-depend on libgnome-keyring-dev.
+  * Build-depend on libopenconnect-dev (>= 4.00) to ensure building against
+    the new libopenconnect API.
+  * Remove lintian-overrides, stack protection check has been demoted.
+  * Patches cherry-picked from upstream to fix connection failure if no IPv6:
+    - debian/patches/01-do-not-fail-if-an-IPv6-address-is-not-given.patch
+    - debian/patches/02-restore-error-for-an-invalid-IPv6-address.patch
+
+ -- Mike Miller <mtmiller@ieee.org>  Tue, 24 Jul 2012 08:44:45 -0400
+
+network-manager-openconnect (0.9.4.0-8) unstable; urgency=low
+
+  * debian/patches/05_Wait-for-QUIT-command-before-exiting.patch:
+    Cherry-pick patch from upstream git to fix a race condition causing
+    gnome-shell to crash. (Closes: #687557)
+
+ -- Mike Miller <mtmiller@ieee.org>  Sat, 20 Oct 2012 16:59:21 -0400
+
+network-manager-openconnect (0.9.4.0-7) unstable; urgency=low
+
+  * New patches pulled from upstream git fixing auth-dialog bugs:
+    - 01_implement-proper-cancellation.patch
+    - 02_fix-ignoring-return-value.patch
+    - 04_fix-hitting-cancel-after-failure.patch
+  * Build-depend on libopenconnect-dev (>= 3.19) for these patches.
+  * Add DM-Upload-Allowed flag.
+
+ -- Mike Miller <mtmiller@ieee.org>  Sat, 02 Jun 2012 11:00:48 -0400
+
+network-manager-openconnect (0.9.4.0-6) unstable; urgency=low
+
+  * Remove network-manager force-reload from postinst.  This is not
+    needed since NetworkManager automatically loads new plugins.
+    (Closes: #672872)
+  * Reload dbus configuration files on install or upgrade.  This is
+    needed to ensure the nm-openconnect user can configure the VPN.
+  * Enable hardening compile flags from dpkg-buildflags.
+    - Include buildflags.mk in debian/rules.
+    - Add lintian-overrides for false positives on stack protection.
+    - Build-depend on dpkg-dev (>= 1.16.1).
+
+ -- Mike Miller <mtmiller@ieee.org>  Fri, 18 May 2012 07:51:05 -0400
+
+network-manager-openconnect (0.9.4.0-5) unstable; urgency=low
+
+  * Comment nm-openconnect user create/delete
+
+ -- Mike Miller <mtmiller@ieee.org>  Sun, 29 Apr 2012 09:25:28 -0400
+
+network-manager-openconnect (0.9.4.0-4) unstable; urgency=low
+
+  * Add nm-openconnect user for dropping privileges (Closes: #567358)
+  * Add Vcs-* fields for the git repository
+
+ -- Mike Miller <mtmiller@ieee.org>  Sat, 28 Apr 2012 08:25:59 -0400
+
+network-manager-openconnect (0.9.4.0-3) unstable; urgency=low
+
+  * Add Homepage field
+  * Add Recommends network-manager-openconnect-gnome for smooth upgrades
+
+ -- Mike Miller <mtmiller@ieee.org>  Wed, 04 Apr 2012 18:49:08 -0400
+
+network-manager-openconnect (0.9.4.0-2) unstable; urgency=low
+
+  * Add Cisco AnyConnect to package description
+  * Add postinst to restart network-manager on install or upgrade
+  * Bump debhelper compatibility to 7
+  * Split package into core and gnome GUI components (Closes: #642487)
+
+ -- Mike Miller <mtmiller@ieee.org>  Mon, 02 Apr 2012 01:47:56 -0400
+
+network-manager-openconnect (0.9.4.0-1) unstable; urgency=low
+
+  * New maintainer
+  * New upstream release (Closes: #639399, #665586, #643686)
+  * Fix openconnect dependency to allow upgrade (Closes: #626976)
+  * Bump network-manager dependency (Closes: #642485)
+  * Bump libopenconnect-dev build-dep (Closes: #642483)
+  * Update description to align with other network-manager-*
+  * debian/watch: Move to .xz tarballs
+  * Update debian/copyright to machine-readable format 1.0
+  * Bump Standards-Version to 3.9.3
+
+ -- Mike Miller <mtmiller@ieee.org>  Sat, 31 Mar 2012 11:24:33 -0400
+
+network-manager-openconnect (0.9.0-2) unstable; urgency=low
+
+  * Add libxml2 build-depends (Closes: #640433)
+
+ -- Ross Burton <ross@debian.org>  Thu, 22 Sep 2011 16:54:16 +0100
+
+network-manager-openconnect (0.9.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #607462)
+  * Depend on openconnect 3 (Closes: #626976)
+
+ -- Ross Burton <ross@debian.org>  Thu, 22 Sep 2011 13:14:10 +0100
+
+network-manager-openconnect (0.7.999-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Don't ship .la files (Closes: #622482).
+
+ -- Luk Claes <luk@debian.org>  Sat, 25 Jun 2011 18:03:09 +0200
+
+network-manager-openconnect (0.8.999-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Ross Burton <ross@debian.org>  Wed, 11 May 2011 12:16:09 +0100
+
+network-manager-openconnect (0.7.999-1+b1) unstable; urgency=low
+
+  * Binary-only non-maintainer upload for amd64; no source changes.
+  * Rebuild in clean environment
+
+ -- Debian amd64 Build Daemon <buildd_amd64-excelsior@buildd.debian.org>  Wed, 03 Feb 2010 18:44:08 +0000
+
+network-manager-openconnect (0.7.999-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Ross Burton <ross@debian.org>  Tue, 02 Feb 2010 10:27:56 +0000
+
+network-manager-openconnect (0.7.2~20090715-2) unstable; urgency=low
+
+  * Rebuild against new NM libs
+
+ -- Ross Burton <ross@debian.org>  Tue, 02 Feb 2010 08:09:18 +0000
+
+network-manager-openconnect (0.7.2~20090715-1) unstable; urgency=low
+
+  * Git snapshot for openconnect 2
+
+ -- Ross Burton <ross@debian.org>  Wed, 15 Jul 2009 08:15:16 +0100
+
+network-manager-openconnect (0.7.2~20090531-1) unstable; urgency=low
+
+  * Git snapshot for openconnect 1.4
+
+ -- Ross Burton <ross@debian.org>  Sun, 31 May 2009 17:10:11 +0100
+
+network-manager-openconnect (0.7.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Package for Unstable
+
+ -- Ross Burton <ross@debian.org>  Mon, 20 Apr 2009 20:29:14 +0100
+
+network-manager-openconnect (0.7-0.20090114) experimental; urgency=low
+
+  * Initial packaging.
+
+ -- Ross Burton <ross@debian.org>  Wed, 14 Jan 2009 11:34:56 +0000
+

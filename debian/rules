@@ -1,0 +1,37 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+AUTORECONF_SOURCES = aclocal.m4 compile config.guess config.h.in config.sub \
+		     configure depcomp install-sh ltmain.sh m4/libtool.m4 \
+		     m4/ltoptions.m4 m4/ltsugar.m4 m4/ltversion.m4 \
+		     m4/lt~obsolete.m4 missing mkinstalldirs Makefile.in \
+		     auth-dialog/Makefile.in properties/Makefile.in \
+		     src/Makefile.in
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		--libexecdir=/usr/lib/NetworkManager \
+		--disable-static
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f debian/network-manager-openconnect/usr/lib/NetworkManager/*.la
+
+override_dh_makeshlibs:
+	dh_makeshlibs -X/usr/lib/$(DEB_HOST_MULTIARCH)/NetworkManager/
+
+override_dh_autoreconf:
+	for f in $(AUTORECONF_SOURCES); do \
+		[ -f $$f.debian-backup ] || mv $$f $$f.debian-backup; \
+	done
+	dh_autoreconf
+
+override_dh_autoreconf_clean:
+	dh_autoreconf_clean
+	for f in $(AUTORECONF_SOURCES); do \
+		[ ! -f $$f.debian-backup ] || mv $$f.debian-backup $$f; \
+	done
